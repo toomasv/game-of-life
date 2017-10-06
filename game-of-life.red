@@ -81,11 +81,11 @@ cx: context [
 				text "Cell:" 25 _Cell: field 40 data (cell) 
 				on-change [cell: _Cell/data] 
 				on-enter [cell: _Cell/data re-draw face/parent/parent]
-				text "Rate:" 25 _Rate: field 40 data 1 [_Img/rate: face/data]
+				text "Rate:" 25 _Rate: field 40 data 3 [_Img/rate: face/data]
 			] return 
 			_Img: image (real-size) loose draw [(next-cycle)] on-time [
 				if go [draw-next]
-			] rate 5 all-over on-down [
+			] rate 3 all-over on-down [
 				offset: event/offset / cell + 1x1 
 				d: pick m/data o: offset/y - 1 * m/cols + offset/x
 				poke m/data o pick [1 0] d + 1 
